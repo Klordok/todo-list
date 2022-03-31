@@ -85,6 +85,10 @@ class ToDoListData {
     // update the database with the updated ToDo list
     return game.users.get(relevantToDo.userId)?.setFlag(ToDoList.ID, ToDoList.FLAGS.TODOS, update);
   }
+  //BULK UPDATE
+  static updateUserToDos(userId, updateData) {
+    return game.users.get(userId)?.setFlag(ToDoList.ID, ToDoList.FLAGS.TODOS, updateData);
+  }
   //DELETE
   static deleteToDo(toDoId) {
     const relevantToDo = this.allToDos[toDoId];
@@ -97,4 +101,5 @@ class ToDoListData {
     // update the database with the updated ToDo list
     return game.users.get(relevantToDo.userId)?.setFlag(ToDoList.ID, ToDoList.FLAGS.TODOS, keyDeletion);
   }
+
 }
